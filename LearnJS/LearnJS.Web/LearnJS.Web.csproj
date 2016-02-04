@@ -62,6 +62,7 @@
   <ItemGroup>
     <Content Include="package.json" />
     <Content Include="tsconfig.json" />
+    <None Include="Properties\PublishProfiles\LearnAngular2.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -81,8 +82,12 @@
     <Folder Include="scripts\" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="app\app.component.ts" />
-    <TypeScriptCompile Include="app\main.ts" />
+    <TypeScriptCompile Include="app\app.component.ts">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="app\main.ts">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="typings\angular2\angular2.d.ts" />
   </ItemGroup>
   <PropertyGroup>
