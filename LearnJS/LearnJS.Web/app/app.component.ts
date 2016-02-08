@@ -1,10 +1,13 @@
 ﻿import {Component, OnInit, Inject} from 'angular2/core';
 import {Hero} from './hero';
 import {HeroDetailComponent} from './hero-detail.component';
+import {HeroService} from './hero.service';
+import {HeroFormComponent} from './hero-form.component';
 
 @Component({
     selector: 'my-app',
-    template: `<h1>{{title}}</h1>              
+    template: `<h1>{{title}}</h1>
+                <hero-form></hero-form>              
                 <h2>My Heroes</h2>
                 <ul class="heroes">
                     <li *ngFor="#hero of heroes" 
@@ -14,7 +17,7 @@ import {HeroDetailComponent} from './hero-detail.component';
                     </li>
                 </ul>
                 <hero-detail [hero]="selectedHero"></hero-detail>`,
-    directives: [HeroDetailComponent],
+    directives: [HeroDetailComponent, HeroFormComponent],
     styles: [`
     .selected {
       background-color: #CFD8DC !important;
