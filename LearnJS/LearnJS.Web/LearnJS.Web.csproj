@@ -86,6 +86,7 @@
   <ItemGroup>
     <TypeScriptCompile Include="app\app.component.ts" />
     <TypeScriptCompile Include="app\hero-detail.component.ts" />
+    <TypeScriptCompile Include="app\hero-form.component.ts" />
     <TypeScriptCompile Include="app\hero.service.ts" />
     <TypeScriptCompile Include="app\hero.ts" />
     <TypeScriptCompile Include="app\main.ts">
@@ -109,7 +110,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>13663</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
