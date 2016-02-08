@@ -60,6 +60,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\hero-form.component.html" />
     <Content Include="package.json" />
     <Content Include="tsconfig.json" />
     <None Include="Properties\PublishProfiles\LearnAngular2.pubxml" />
@@ -82,14 +83,11 @@
     <Folder Include="scripts\" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="app\app.component.ts">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </TypeScriptCompile>
+    <TypeScriptCompile Include="app\app.component.ts" />
     <TypeScriptCompile Include="app\hero-detail.component.ts" />
+    <TypeScriptCompile Include="app\hero-form.component.ts" />
     <TypeScriptCompile Include="app\hero.ts" />
-    <TypeScriptCompile Include="app\main.ts">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </TypeScriptCompile>
+    <TypeScriptCompile Include="app\main.ts" />
     <TypeScriptCompile Include="typings\angular2\angular2.d.ts" />
   </ItemGroup>
   <PropertyGroup>
