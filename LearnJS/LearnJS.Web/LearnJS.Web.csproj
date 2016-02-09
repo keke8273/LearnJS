@@ -64,6 +64,7 @@
     <Content Include="app\hero-form.component.html" />
     <Content Include="package.json" />
     <Content Include="tsconfig.json" />
+    <Content Include="Metadata\deploymentTemplates\apiappconfig.azureresource.json" />
     <None Include="Properties\PublishProfiles\LearnAngular2.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

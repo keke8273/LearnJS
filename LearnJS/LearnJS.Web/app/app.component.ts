@@ -6,8 +6,8 @@ import {HeroFormComponent} from './hero-form.component';
 
 @Component({
     selector: 'my-app',
-    template: `<h1>{{title}}</h1>
-                <hero-form></hero-form>              
+    template: `<h1>{{title}}</h1>              
+                <hero-form></hero-form>
                 <h2>My Heroes</h2>
                 <ul class="heroes">
                     <li *ngFor="#hero of heroes" 

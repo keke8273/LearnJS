@@ -12,6 +12,7 @@ var HeroFormComponent = (function () {
     function HeroFormComponent() {
         this.powers = ['Really Smart', 'Super Flexible', 'Super Hot', 'Weather Changer'];
         this.model = { "id": 18, "name": "Dr IQ", "power": this.powers[0], "alterEgo": 'Chunck Overstreet' };
+        //model = new Hero(18,  "Dr IQ 2", this.powers[0],'Chunck Overstreet');
         this.submitted = false;
     }
     HeroFormComponent.prototype.onSubmit = function () { this.submitted = true; };
