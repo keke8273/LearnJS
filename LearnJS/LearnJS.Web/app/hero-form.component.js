@@ -14,8 +14,18 @@ var HeroFormComponent = (function () {
         this.model = { "id": 18, "name": "Dr IQ", "power": this.powers[0], "alterEgo": 'Chunck Overstreet' };
         //model = new Hero(18,  "Dr IQ 2", this.powers[0],'Chunck Overstreet');
         this.submitted = false;
+        this.active = true;
     }
     HeroFormComponent.prototype.onSubmit = function () { this.submitted = true; };
+    HeroFormComponent.prototype.newHero = function () {
+        //this.model = { "id": 18, "name": "", "power": "", "alterEgo": "" };
+        var _this = this;
+        this.model.name = "";
+        this.model.power = "";
+        this.model.alterEgo = "";
+        this.active = false;
+        setTimeout(function () { return _this.active = true; }, 0);
+    };
     Object.defineProperty(HeroFormComponent.prototype, "diagnostic", {
         // TODO: Remove this when we're done
         get: function () { return JSON.stringify(this.model); },
