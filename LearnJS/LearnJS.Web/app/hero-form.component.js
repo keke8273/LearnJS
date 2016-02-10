@@ -8,15 +8,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('angular2/core');
+var hero_service_1 = require('./hero.service');
 var HeroFormComponent = (function () {
-    function HeroFormComponent() {
+    function HeroFormComponent(_heroService) {
+        this._heroService = _heroService;
         this.powers = ['Really Smart', 'Super Flexible', 'Super Hot', 'Weather Changer'];
         this.model = { "id": 18, "name": "Dr IQ", "power": this.powers[0], "alterEgo": 'Chunck Overstreet' };
         //model = new Hero(18,  "Dr IQ 2", this.powers[0],'Chunck Overstreet');
         this.submitted = false;
         this.active = true;
     }
-    HeroFormComponent.prototype.onSubmit = function () { this.submitted = true; };
+    HeroFormComponent.prototype.onSubmit = function () {
+        this.submitted = true;
+        this._heroService.addHero(this.model.name, this.model.power, this.model.alterEgo);
+    };
     HeroFormComponent.prototype.newHero = function () {
         //this.model = { "id": 18, "name": "", "power": "", "alterEgo": "" };
         var _this = this;
@@ -37,7 +42,7 @@ var HeroFormComponent = (function () {
             selector: 'hero-form',
             templateUrl: 'app/hero-form.component.html'
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [hero_service_1.HeroService])
     ], HeroFormComponent);
     return HeroFormComponent;
 })();

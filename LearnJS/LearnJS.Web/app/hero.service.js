@@ -11,9 +11,14 @@ var core_1 = require('angular2/core');
 var mock_heroes_1 = require('./mock-heroes');
 var HeroService = (function () {
     function HeroService() {
+        this.lastId = mock_heroes_1.HEROES[mock_heroes_1.HEROES.length - 1].id;
     }
     HeroService.prototype.getHeroes = function () {
         return Promise.resolve(mock_heroes_1.HEROES);
+    };
+    HeroService.prototype.addHero = function (name, power, alterEgo) {
+        var newHero = { "id": ++this.lastId, "name": name, "power": power, "alterEgo": alterEgo };
+        mock_heroes_1.HEROES.push(newHero);
     };
     HeroService = __decorate([
         core_1.Injectable(), 
