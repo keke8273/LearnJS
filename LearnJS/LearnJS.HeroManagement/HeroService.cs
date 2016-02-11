@@ -15,6 +15,9 @@ namespace LearnJS.HeroManagement
             this._nameOrConnectionString = nameOrConnectionString;
         }
 
-        public Guid CreateHero
+        public Guid CreateHero(HeroInfo heroInfo)
+        {
+
+        }
     }
 }
