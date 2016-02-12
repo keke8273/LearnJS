@@ -9,6 +9,10 @@ namespace LearnJS.HeroManagement.ReadModel.Implementation
     {
         public const string SchemaName = "HeroManagement";
 
+        public HeroDbContext() : base(nameOrConnectionString:SchemaName)
+        {
+        }
+
         public HeroDbContext(string nameOrConnectionString)
             : base (nameOrConnectionString)
         {

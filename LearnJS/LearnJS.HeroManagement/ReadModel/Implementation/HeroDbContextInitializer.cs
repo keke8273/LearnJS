@@ -15,27 +15,7 @@ namespace LearnJS.HeroManagement.ReadModel.Implementation
 
         public static void Seed(DbContext context)
         {
-            context.Set<Hero>().AddRange(new List<Hero>
-            {
-                new Hero
-                {
-                    Id = Guid.NewGuid(),
-                    Name = "Dr Awrsome",
-                    Power = "Super Cool",
-                    SerialNumber = 1,
-                    AlterEgo = "Be cool",
-                },
-                new Hero
-                {
-                    Id = Guid.NewGuid(),
-                    Name = "Nissa",
-                    Power = "Awaken Lands",
-                    SerialNumber = 2,
-                    AlterEgo = "Defeat Eldrazi"
-                }
-            });
 
-            context.SaveChanges();
         }
 
     }
