@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using LearnJS.HeroManagement.ReadModel;
+using LearnJS.HeroManagement.ReadModel.Implementation;
 
 namespace LearnJS.HeroManagement
 {
@@ -15,9 +12,17 @@ namespace LearnJS.HeroManagement
             this._nameOrConnectionString = nameOrConnectionString;
         }
 
-        public Guid CreateHero(HeroInfo heroInfo)
+        public void CreateHero(HeroInfo heroInfo)
         {
+            using (var context = new HeroDbContext(_nameOrConnectionString))
+            {
+                var hero = new Hero(heroInfo.Id, heroInfo.SerialNumber, heroInfo.Name, heroInfo.Power,
+                    heroInfo.AlterEgo);
 
+                context.Set<Hero>().Add(hero);
+
+                context.SaveChanges();
+            }
         }
     }
 }

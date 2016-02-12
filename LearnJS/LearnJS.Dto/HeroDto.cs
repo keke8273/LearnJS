@@ -1,10 +1,7 @@
-﻿using System;
-
-namespace LearnJS.HeroManagement
+﻿namespace LearnJS.Dto
 {
-    public class HeroInfo
+    public class HeroDto
     {
-        public Guid Id { get; set; }
         public int SerialNumber { get; set; }
         public string Name { get; set; }
         public string Power { get; set; }
