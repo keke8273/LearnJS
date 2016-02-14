@@ -13,8 +13,7 @@ var HeroFormComponent = (function () {
     function HeroFormComponent(_heroService) {
         this._heroService = _heroService;
         this.powers = ['Really Smart', 'Super Flexible', 'Super Hot', 'Weather Changer'];
-        this.model = { "id": 18, "name": "Dr IQ", "power": this.powers[0], "alterEgo": 'Chunck Overstreet' };
-        //model = new Hero(18,  "Dr IQ 2", this.powers[0],'Chunck Overstreet');
+        this.model = { "serialNumber": 18, "name": "Dr IQ", "power": this.powers[0], "alterEgo": 'Chunck Overstreet' };
         this.submitted = false;
         this.active = true;
     }
@@ -40,7 +39,7 @@ var HeroFormComponent = (function () {
     HeroFormComponent = __decorate([
         core_1.Component({
             selector: 'hero-form',
-            templateUrl: 'app/hero-form.component.html'
+            templateUrl: 'app/hero-form.component.html',
         }), 
         __metadata('design:paramtypes', [hero_service_1.HeroService])
     ], HeroFormComponent);

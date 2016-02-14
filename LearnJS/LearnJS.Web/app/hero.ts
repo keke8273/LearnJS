@@ -1,12 +1,12 @@
 ﻿export interface Hero {
-    id: number;
+    serialNumber: number;
     name: string;
     power: string;
-    alterEgo?: string;
+    alterEgo: string;
 }
 
 export class HeroClass implements Hero {
-    constructor(public id: number, public name: string, public power: string, public alterEgo: string)
+    constructor(public serialNumber: number, public name: string, public power: string, public alterEgo: string)
     {
     }
 }

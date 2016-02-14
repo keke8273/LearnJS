@@ -6,7 +6,7 @@ import {HeroService} from './hero.service';
     selector: 'hero-detail',
     template: `<div *ngIf="hero">
                     <h2>{{hero.name}} details</h2>
-                    <div><label>id: </label>{{hero.id}}</div>
+                    <div><label>id: </label>{{hero.serialNumber}}</div>
                     <div>
                         <label>name: </label>
                         <div><input [(ngModel)]="hero.name" placeholder="name"></div>

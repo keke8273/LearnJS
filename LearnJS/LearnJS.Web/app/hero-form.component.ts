@@ -5,16 +5,14 @@ import {HeroService} from './hero.service';
 
 @Component({
     selector: 'hero-form',
-    templateUrl: 'app/hero-form.component.html'
+    templateUrl: 'app/hero-form.component.html',
 })
 export class HeroFormComponent {
     constructor(private _heroService: HeroService) { }
 
     powers = ['Really Smart', 'Super Flexible', 'Super Hot', 'Weather Changer'];
 
-    model:Hero = { "id": 18, "name": "Dr IQ", "power": this.powers[0], "alterEgo":'Chunck Overstreet'};
-    //model = new Hero(18,  "Dr IQ 2", this.powers[0],'Chunck Overstreet');
-
+    model: Hero = { "serialNumber": 18, "name": "Dr IQ", "power": this.powers[0], "alterEgo":'Chunck Overstreet'};
     submitted = false;
     active = true;
 

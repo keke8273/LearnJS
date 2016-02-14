@@ -1,4 +1,6 @@
 ﻿import {Component, OnInit, Inject} from 'angular2/core';
+import {HTTP_PROVIDERS}    from 'angular2/http';
+
 import {Hero} from './hero';
 import {HeroDetailComponent} from './hero-detail.component';
 import {HeroService} from './hero.service';
@@ -13,7 +15,7 @@ import {HeroFormComponent} from './hero-form.component';
                     <li *ngFor="#hero of heroes" 
                         [class.selected]="hero === selectedHero"
                         (click)="onSelect(hero)">
-                        <span class="badge">{{hero.id}}</span> {{hero.name}}
+                        <span class="badge">{{hero.serialNumber}}</span> {{hero.name}}
                     </li>
                 </ul>
                 <hero-detail [hero]="selectedHero"></hero-detail>`,
@@ -62,18 +64,21 @@ import {HeroFormComponent} from './hero-form.component';
       left: -1px;
       top: -4px;
       height: 1.8em;
-      margin-right: .8em;
+      margin-right: .8em;   
       border-radius: 4px 0px 0px 4px;
     }
   `],
-    providers: [HeroService]
+    providers: [HTTP_PROVIDERS, HeroService]
 })
 export class AppComponent implements OnInit {
     public title = 'Tour of Heroes';
     public heroes: Hero[];
     public selectedHero: Hero;
 
-    constructor(private _heroService: HeroService) { }
+    constructor(private _heroService: HeroService)
+    {
+        _heroService.heroAdded.subscribe(hero => this.heroes.push(hero));
+    }
 
     getHeroes() {
         this._heroService.getHeroes().then(heroes => this.heroes = heroes);

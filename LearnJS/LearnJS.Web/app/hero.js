@@ -1,6 +1,6 @@
 var HeroClass = (function () {
-    function HeroClass(id, name, power, alterEgo) {
-        this.id = id;
+    function HeroClass(serialNumber, name, power, alterEgo) {
+        this.serialNumber = serialNumber;
         this.name = name;
         this.power = power;
         this.alterEgo = alterEgo;
