@@ -9,16 +9,12 @@ import {HeroFormComponent} from './hero-form.component';
 @Component({
     selector: 'my-app',
     template: `<h1>{{title}}</h1>              
-                <hero-form></hero-form>
-                <h2>My Heroes</h2>
-                <ul class="heroes">
-                    <li *ngFor="#hero of heroes" 
-                        [class.selected]="hero === selectedHero"
-                        (click)="onSelect(hero)">
-                        <span class="badge">{{hero.serialNumber}}</span> {{hero.name}}
-                    </li>
-                </ul>
-                <hero-detail [hero]="selectedHero"></hero-detail>`,
+                <div class="row">
+                    <div></div>
+                    <hero-form></hero-form>
+
+                    <hero-detail [hero]="selectedHero"></hero-detail>
+                </div>`,
     directives: [HeroDetailComponent, HeroFormComponent],
     styles: [`
     .selected {
