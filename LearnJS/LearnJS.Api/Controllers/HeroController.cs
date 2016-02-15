@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Http;
 using System.Web.Http.Cors;
 using AutoMapper;
 using LearnJS.Dto;
 using LearnJS.HeroManagement;
 using LearnJS.HeroManagement.ReadModel;
-using Microsoft.Practices.ObjectBuilder2;
 
 namespace LearnJS.Api.Controllers
 {

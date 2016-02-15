@@ -6,32 +6,32 @@ import {HeroService} from './hero.service';
 @Component({
     selector: 'hero-form',
     templateUrl: 'app/hero-form.component.html',
+    inputs: ['hero']
 })
 export class HeroFormComponent {
     constructor(private _heroService: HeroService) { }
 
+    public hero: Hero;
+
     powers = ['Really Smart', 'Super Flexible', 'Super Hot', 'Weather Changer'];
 
-    model: Hero = { "serialNumber": 18, "name": "Dr IQ", "power": this.powers[0], "alterEgo":'Chunck Overstreet'};
     submitted = false;
     active = true;
 
     onSubmit() {
         this.submitted = true;
-        this._heroService.addHero(this.model.name, this.model.power, this.model.alterEgo);
+        this._heroService.addHero(this.hero.name, this.hero.power, this.hero.alterEgo);
     }
 
     newHero() {
-        //this.model = { "id": 18, "name": "", "power": "", "alterEgo": "" };
-
-        this.model.name = "";
-        this.model.power = "";
-        this.model.alterEgo = "";
+        this.hero.name = "";
+        this.hero.power = "";
+        this.hero.alterEgo = "";
 
         this.active = false;
         setTimeout(() => this.active = true, 0);
     }
 
     // TODO: Remove this when we're done
-    get diagnostic() { return JSON.stringify(this.model); }
+    get diagnostic() { return JSON.stringify(this.hero); }
 }

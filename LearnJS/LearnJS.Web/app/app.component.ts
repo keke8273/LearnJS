@@ -1,90 +1,32 @@
 ﻿import {Component, OnInit, Inject} from 'angular2/core';
-import {HTTP_PROVIDERS}    from 'angular2/http';
+import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 
 import {Hero} from './hero';
-import {HeroDetailComponent} from './hero-detail.component';
-import {HeroService} from './hero.service';
-import {HeroFormComponent} from './hero-form.component';
+import {HeroComponent} from './hero.component';
+import {CrisisComponent} from './crisis.component';
 
 @Component({
     selector: 'my-app',
-    template: `<h1>{{title}}</h1>              
-                <div class="row">
-                    <div></div>
-                    <hero-form></hero-form>
-
-                    <hero-detail [hero]="selectedHero"></hero-detail>
+    template: `<h1>{{title}}</h1>
+                <div class="container">
+                    <nav>
+                        <a [routerLink] = "['CrisisCenter']">Crisis Center</a>
+                        <a [routerLink] = "['Heroes']">Heroes</a>
+                    </nav>              
+                    <div class="row">
+                        <div class="col-lg-2"></div>
+                        <router-outlet class="col-lg-8" style="color:blue"></router-outlet>
+                        <div class="col-lg-2"></div>
+                    </div>
                 </div>`,
-    directives: [HeroDetailComponent, HeroFormComponent],
-    styles: [`
-    .selected {
-      background-color: #CFD8DC !important;
-      color: white;
-    }
-    .heroes {
-      margin: 0 0 2em 0;
-      list-style-type: none;
-      padding: 0;
-      width: 10em;
-    }
-    .heroes li {
-      cursor: pointer;
-      position: relative;
-      left: 0;
-      background-color: #EEE;
-      margin: .5em;
-      padding: .3em 0em;
-      height: 1.6em;
-      border-radius: 4px;
-    }
-    .heroes li.selected:hover {
-      color: white;
-    }
-    .heroes li:hover {
-      color: #607D8B;
-      background-color: #EEE;
-      left: .1em;
-    }
-    .heroes .text {
-      position: relative;
-      top: -3px;
-    }
-    .heroes .badge {
-      display: inline-block;
-      font-size: small;
-      color: white;
-      padding: 0.8em 0.7em 0em 0.7em;
-      background-color: #607D8B;
-      line-height: 1em;
-      position: relative;
-      left: -1px;
-      top: -4px;
-      height: 1.8em;
-      margin-right: .8em;   
-      border-radius: 4px 0px 0px 4px;
-    }
-  `],
-    providers: [HTTP_PROVIDERS, HeroService]
+    directives: [CrisisComponent, HeroComponent],
 })
-export class AppComponent implements OnInit {
+@RouteConfig([
+    { path: '/crisis-center', name: 'CrisisCenter', component: CrisisComponent },
+    { path: '/heroes', name: 'Heroes', component: HeroComponent},
+])
+export class AppComponent{
     public title = 'Tour of Heroes';
-    public heroes: Hero[];
-    public selectedHero: Hero;
-
-    constructor(private _heroService: HeroService)
-    {
-        _heroService.heroAdded.subscribe(hero => this.heroes.push(hero));
-    }
-
-    getHeroes() {
-        this._heroService.getHeroes().then(heroes => this.heroes = heroes);
-    }
-
-    ngOnInit() {
-        this.getHeroes();
-    }
-
-    onSelect(hero: Hero) { this.selectedHero = hero; }
 }
 
 

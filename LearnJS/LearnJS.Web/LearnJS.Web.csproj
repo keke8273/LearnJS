@@ -87,7 +87,8 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="app\app.component.ts" />
-    <TypeScriptCompile Include="app\hero-detail.component.ts" />
+    <TypeScriptCompile Include="app\crisis.component.ts" />
+    <TypeScriptCompile Include="app\hero.component.ts" />
     <TypeScriptCompile Include="app\hero-form.component.ts" />
     <TypeScriptCompile Include="app\hero.service.ts" />
     <TypeScriptCompile Include="app\hero.ts" />
