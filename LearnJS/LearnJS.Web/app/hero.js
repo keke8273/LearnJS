@@ -1,11 +1,6 @@
-var HeroClass = (function () {
-    function HeroClass(serialNumber, name, power, alterEgo) {
-        this.serialNumber = serialNumber;
-        this.name = name;
-        this.power = power;
-        this.alterEgo = alterEgo;
-    }
-    return HeroClass;
-})();
-exports.HeroClass = HeroClass;
+//export class HeroClass implements Hero {
+//    constructor(public serialNumber: number, public name: string, public power: string, public alterEgo: string)
+//    {
+//    }
+//}
 //# sourceMappingURL=hero.js.map

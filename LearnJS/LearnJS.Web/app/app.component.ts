@@ -9,17 +9,19 @@ import {CrisisComponent} from './crisis.component';
     selector: 'my-app',
     template: `<h1>{{title}}</h1>
                 <div class="container">
-                    <nav>
-                        <a [routerLink] = "['CrisisCenter']">Crisis Center</a>
-                        <a [routerLink] = "['Heroes']">Heroes</a>
-                    </nav>              
                     <div class="row">
-                        <div class="col-lg-2"></div>
-                        <router-outlet class="col-lg-8" style="color:blue"></router-outlet>
-                        <div class="col-lg-2"></div>
+                        <nav>
+                            <a [routerLink] = "['CrisisCenter']">Crisis Center</a>
+                            <a [routerLink] = "['Heroes']">Heroes</a>
+                        </nav>     
+                    </div>         
+                    <div class="row">
+                        <div class="col-lg-2" style="background:blue"></div>
+                        <router-outlet class="col-lg-8 centered"></router-outlet>
+                        <div class="col-lg-2" style="background:blue"></div>
                     </div>
                 </div>`,
-    directives: [CrisisComponent, HeroComponent],
+    directives: [CrisisComponent, HeroComponent, ROUTER_DIRECTIVES],
 })
 @RouteConfig([
     { path: '/crisis-center', name: 'CrisisCenter', component: CrisisComponent },

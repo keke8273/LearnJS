@@ -7,19 +7,7 @@ import {HeroFormComponent} from './hero-form.component';
 
 @Component({
     selector: 'heroes',
-    template: `
-                <div class="col-lg-2">
-                    <ul class="heroes">
-                        <li *ngFor="#hero of heroes" 
-                            [class.selected]="hero === selectedHero"
-                            (click)="onSelect(hero)">
-                            <span class="badge">{{hero.id}}</span> {{hero.name}}
-                        </li>
-                    </ul>
-                </div>
-                <div *ngIf="selectedHero">
-                    <hero-form [hero]="selectedHero"></hero-form>
-               </div>`,
+    templateUrl: 'content/templates/hero.component.html',
     directives: [HeroFormComponent],
     styles: [`
     .selected {

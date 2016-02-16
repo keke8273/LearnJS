@@ -5,13 +5,13 @@ import {HeroService} from './hero.service';
 
 @Component({
     selector: 'hero-form',
-    templateUrl: 'app/hero-form.component.html',
-    inputs: ['hero']
+    templateUrl: 'content/templates/hero-form.component.html',
+    inputs: ['model']
 })
 export class HeroFormComponent {
     constructor(private _heroService: HeroService) { }
 
-    public hero: Hero;
+    public model: Hero;
 
     powers = ['Really Smart', 'Super Flexible', 'Super Hot', 'Weather Changer'];
 
@@ -20,18 +20,18 @@ export class HeroFormComponent {
 
     onSubmit() {
         this.submitted = true;
-        this._heroService.addHero(this.hero.name, this.hero.power, this.hero.alterEgo);
+        this._heroService.addHero(this.model.name, this.model.power, this.model.alterEgo);
     }
 
     newHero() {
-        this.hero.name = "";
-        this.hero.power = "";
-        this.hero.alterEgo = "";
+        this.model.name = "";
+        this.model.power = "";
+        this.model.alterEgo = "";
 
         this.active = false;
         setTimeout(() => this.active = true, 0);
     }
 
     // TODO: Remove this when we're done
-    get diagnostic() { return JSON.stringify(this.hero); }
+    get diagnostic() { return JSON.stringify(this.model); }
 }

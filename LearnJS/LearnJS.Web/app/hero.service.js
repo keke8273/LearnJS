@@ -13,8 +13,8 @@ var Observable_1 = require('rxjs/Observable');
 var HeroService = (function () {
     function HeroService(_http) {
         this._http = _http;
-        this._heroUrl = 'http://learnjsapi.azurewebsites.net/api/hero';
-        //private _heroUrl = 'http://localhost:53571/api/hero';
+        //private _heroUrl = 'http://learnjsapi.azurewebsites.net/api/hero';
+        this._heroUrl = 'http://localhost:53571/api/hero';
         //events
         this.heroAdded = new core_1.EventEmitter();
     }

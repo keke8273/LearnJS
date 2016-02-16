@@ -1,0 +1,16 @@
+﻿<div class="container">
+    <div class="row">
+        <div class="col-lg-4">
+            <ul class="heroes">
+                <li *ngFor="#hero of heroes"
+                    [class.selected]="hero === selectedHero"
+                    (click)="onSelect(hero)">
+                    <span class="badge">{{hero.serialNumber}}</span> {{hero.name}}
+                </li>
+            </ul>
+        </div>
+        <div class="col-lg-8" *ngIf="selectedHero">
+            <hero-form [model]="selectedHero"></hero-form>
+        </div>
+    </div>
+</div>

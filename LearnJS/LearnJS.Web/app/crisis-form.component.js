@@ -8,41 +8,31 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('angular2/core');
-var hero_service_1 = require('./hero.service');
-var HeroFormComponent = (function () {
-    function HeroFormComponent(_heroService) {
-        this._heroService = _heroService;
-        this.powers = ['Really Smart', 'Super Flexible', 'Super Hot', 'Weather Changer'];
+var crisis_service_1 = require('./crisis.service');
+var CrisisFormComponent = (function () {
+    function CrisisFormComponent(_service) {
+        this._service = _service;
         this.submitted = false;
         this.active = true;
     }
-    HeroFormComponent.prototype.onSubmit = function () {
+    CrisisFormComponent.prototype.onSubmit = function () {
         this.submitted = true;
-        this._heroService.addHero(this.model.name, this.model.power, this.model.alterEgo);
     };
-    HeroFormComponent.prototype.newHero = function () {
-        var _this = this;
-        this.model.name = "";
-        this.model.power = "";
-        this.model.alterEgo = "";
-        this.active = false;
-        setTimeout(function () { return _this.active = true; }, 0);
-    };
-    Object.defineProperty(HeroFormComponent.prototype, "diagnostic", {
+    Object.defineProperty(CrisisFormComponent.prototype, "diagnostic", {
         // TODO: Remove this when we're done
         get: function () { return JSON.stringify(this.model); },
         enumerable: true,
         configurable: true
     });
-    HeroFormComponent = __decorate([
+    CrisisFormComponent = __decorate([
         core_1.Component({
-            selector: 'hero-form',
-            templateUrl: 'content/templates/hero-form.component.html',
+            selector: 'crisis-form',
+            templateUrl: 'content/templates/crisis-form.component.html',
             inputs: ['model']
         }), 
-        __metadata('design:paramtypes', [hero_service_1.HeroService])
-    ], HeroFormComponent);
-    return HeroFormComponent;
+        __metadata('design:paramtypes', [crisis_service_1.CrisisService])
+    ], CrisisFormComponent);
+    return CrisisFormComponent;
 })();
-exports.HeroFormComponent = HeroFormComponent;
-//# sourceMappingURL=hero-form.component.js.map
+exports.CrisisFormComponent = CrisisFormComponent;
+//# sourceMappingURL=crisis-form.component.js.map

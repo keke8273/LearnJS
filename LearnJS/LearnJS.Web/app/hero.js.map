@@ -1,1 +1,1 @@
-{"version":3,"file":"hero.js","sourceRoot":"","sources":["hero.ts"],"names":["HeroClass","HeroClass.constructor"],"mappings":"AAOA;IACIA,mBAAmBA,YAAoBA,EAASA,IAAYA,EAASA,KAAaA,EAASA,QAAgBA;QAAxFC,iBAAYA,GAAZA,YAAYA,CAAQA;QAASA,SAAIA,GAAJA,IAAIA,CAAQA;QAASA,UAAKA,GAALA,KAAKA,CAAQA;QAASA,aAAQA,GAARA,QAAQA,CAAQA;IAE3GA,CAACA;IACLD,gBAACA;AAADA,CAACA,AAJD,IAIC;AAJY,iBAAS,YAIrB,CAAA"}
+{"version":3,"file":"hero.js","sourceRoot":"","sources":["hero.ts"],"names":[],"mappings":"AAOA,0CAA0C;AAC1C,kHAAkH;AAClH,OAAO;AACP,OAAO;AACP,GAAG"}

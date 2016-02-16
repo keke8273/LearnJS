@@ -2,16 +2,14 @@
 import {Http, Response, Headers, RequestOptions} from 'angular2/http';
 import {Hero} from './hero';
 import {Observable} from 'rxjs/Observable';
-import {HEROES} from './mock-heroes';
-
 
 @Injectable()
 export class HeroService{
 
     constructor(private _http : Http){} 
 
-    private _heroUrl = 'http://learnjsapi.azurewebsites.net/api/hero';
-    //private _heroUrl = 'http://localhost:53571/api/hero';
+    //private _heroUrl = 'http://learnjsapi.azurewebsites.net/api/hero';
+    private _heroUrl = 'http://localhost:53571/api/hero';
 
     //events
     @Output() heroAdded: EventEmitter<Hero> = new EventEmitter();
