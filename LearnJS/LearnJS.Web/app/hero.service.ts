@@ -8,8 +8,8 @@ export class HeroService{
 
     constructor(private _http : Http){} 
 
-    //private _heroUrl = 'http://learnjsapi.azurewebsites.net/api/hero';
-    private _heroUrl = 'http://localhost:53571/api/hero';
+    private _heroUrl = 'http://learnjsapi.azurewebsites.net/api/hero';
+    //private _heroUrl = 'http://localhost:53571/api/hero';
 
     //events
     @Output() heroAdded: EventEmitter<Hero> = new EventEmitter();
