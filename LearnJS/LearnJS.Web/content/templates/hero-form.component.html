@@ -11,17 +11,17 @@
 
     <div class="form-group">
         <label for="power">Hero Power</label>
-        <select class="form-control" required [(ngModel)]="model.power">
+        <select class="form-control" required [(ngModel)]="model.power" ngControl="power" #name ="ngForm">
             <option *ngFor="#p of powers" [value]="p">{{p}}</option>
         </select>
     </div>
 
     <div class="form-group">
         <label for="alterEgo">Alter Ego</label>
-        <input type="text" class="form-control" [(ngModel)] ="model.alterEgo">
+        <input type="text" class="form-control" [(ngModel)] ="model.alterEgo" ngControl="alterEgo" #name ="ngForm">
     </div>
 
-    <button type="submit" class="btn btn-default" [disabled]="!heroForm.form.valid">Submit</button>
+    <button type="submit" class="btn btn-default" [disabled]="!heroForm.form.valid || heroForm.form.pristine">Submit</button>
 
     <button type="button" class="btn btn-default" (click)="newHero()">New Hero</button>
 </form>

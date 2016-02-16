@@ -24,10 +24,7 @@ export class HeroFormComponent {
     }
 
     newHero() {
-        this.model.name = "";
-        this.model.power = "";
-        this.model.alterEgo = "";
-
+        this.model = { "serialNumber": -1, "name": "", "power": "", "alterEgo":"" }
         this.active = false;
         setTimeout(() => this.active = true, 0);
     }

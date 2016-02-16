@@ -6,7 +6,7 @@ import {CrisisService} from './crisis.service';
 import {CrisisFormComponent} from './crisis-form.component';
 
 @Component({
-    selector: 'heroes',
+    selector: 'crisis-component',
     templateUrl: 'content/templates/crisis.component.html',
     directives: [CrisisFormComponent],
     styles: [`

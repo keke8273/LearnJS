@@ -25,7 +25,7 @@ var CrisisComponent = (function () {
     CrisisComponent.prototype.onSelect = function (crisis) { this.selectedCrisis = crisis; };
     CrisisComponent = __decorate([
         core_1.Component({
-            selector: 'heroes',
+            selector: 'crisis-component',
             templateUrl: 'content/templates/crisis.component.html',
             directives: [crisis_form_component_1.CrisisFormComponent],
             styles: ["\n    .selected {\n      background-color: #CFD8DC !important;\n      color: white;\n    }\n    .crisises {\n      margin: 0 0 2em 0;\n      list-style-type: none;\n      padding: 0;\n      width: 20em;\n    }\n    .crisises li {\n      cursor: pointer;\n      position: relative;\n      left: 0;\n      background-color: #EEE;\n      margin: .5em;\n      padding: .3em 0em;\n      height: 1.6em;\n      border-radius: 4px;\n    }\n    .crisises li.selected:hover {\n      color: white;\n    }\n    .crisises li:hover {\n      color: #607D8B;\n      background-color: #EEE;\n      left: .1em;\n    }\n    .crisises .text {\n      position: relative;\n      top: -3px;\n    }\n    .crisises .badge {\n      display: inline-block;\n      font-size: small;\n      color: white;\n      padding: 0.8em 0.7em 0em 0.7em;\n      background-color: #607D8B;\n      line-height: 1em;\n      position: relative;\n      left: -1px;\n      top: -4px;\n      height: 1.8em;\n      margin-right: .8em;   \n      border-radius: 4px 0px 0px 4px;\n    }\n  "],

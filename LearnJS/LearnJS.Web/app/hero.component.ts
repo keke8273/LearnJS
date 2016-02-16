@@ -6,7 +6,7 @@ import {HeroService} from './hero.service';
 import {HeroFormComponent} from './hero-form.component';
 
 @Component({
-    selector: 'heroes',
+    selector: 'hero-component',
     templateUrl: 'content/templates/hero.component.html',
     directives: [HeroFormComponent],
     styles: [`
