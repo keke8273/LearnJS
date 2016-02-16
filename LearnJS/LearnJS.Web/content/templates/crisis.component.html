@@ -1,16 +1,14 @@
-﻿<div class="container">
-    <div class="row">
-        <div class="col-lg-4">
-            <ul class="crisises">
-                <li *ngFor="#crisis of crisises"
-                    [class.selected]="crisis === selectedCrisis"
-                    (click)="onSelect(crisis)">
-                    <span class="badge">{{crisis.serialNumber}}</span> {{crisis.name}}
-                </li>
-            </ul>
-        </div>
-        <div class="col-lg-6" *ngIf="selectedCrisis">
-            <crisis-form [model]="selectedCrisis"></crisis-form>
-        </div>
+﻿<div class="row">
+    <div class="col-lg-4">
+        <ul class="crisises">
+            <li *ngFor="#crisis of crisises"
+                [class.selected]="crisis === selectedCrisis"
+                (click)="onSelect(crisis)">
+                <span class="badge">{{crisis.serialNumber}}</span> {{crisis.name}}
+            </li>
+        </ul>
+    </div>
+    <div class="col-lg-6" *ngIf="selectedCrisis">
+        <crisis-form [model]="selectedCrisis"></crisis-form>
     </div>
 </div>

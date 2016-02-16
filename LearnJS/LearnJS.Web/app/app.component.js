@@ -18,7 +18,7 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "<h1>{{title}}</h1>\n                <div class=\"container\">\n                    <div class=\"row\">\n                        <nav>\n                            <a [routerLink] = \"['CrisisCenter']\">Crisis Center</a>\n                            <a [routerLink] = \"['Heroes']\">Heroes</a>\n                        </nav>     \n                    </div>         \n                    <div class=\"row\">\n                        <div class=\"col-lg-2\" style=\"background:blue\"></div>\n                        <router-outlet class=\"col-lg-8 centered\"></router-outlet>\n                        <div class=\"col-lg-2\" style=\"background:blue\"></div>\n                    </div>\n                </div>",
+            template: "<h1>{{title}}</h1>\n                <nav>\n                    <a [routerLink] = \"['CrisisCenter']\">Crisis Center</a>\n                    <a [routerLink] = \"['Heroes']\">Heroes</a>\n                </nav>     \n                <div class=\"container\">\n                    <router-outlet></router-outlet>\n                </div>",
             directives: [crisis_component_1.CrisisComponent, hero_component_1.HeroComponent, router_1.ROUTER_DIRECTIVES],
         }),
         router_1.RouteConfig([

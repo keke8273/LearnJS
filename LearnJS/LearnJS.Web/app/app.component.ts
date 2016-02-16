@@ -8,18 +8,12 @@ import {CrisisComponent} from './crisis.component';
 @Component({
     selector: 'my-app',
     template: `<h1>{{title}}</h1>
+                <nav>
+                    <a [routerLink] = "['CrisisCenter']">Crisis Center</a>
+                    <a [routerLink] = "['Heroes']">Heroes</a>
+                </nav>     
                 <div class="container">
-                    <div class="row">
-                        <nav>
-                            <a [routerLink] = "['CrisisCenter']">Crisis Center</a>
-                            <a [routerLink] = "['Heroes']">Heroes</a>
-                        </nav>     
-                    </div>         
-                    <div class="row">
-                        <div class="col-lg-2" style="background:blue"></div>
-                        <router-outlet class="col-lg-8 centered"></router-outlet>
-                        <div class="col-lg-2" style="background:blue"></div>
-                    </div>
+                    <router-outlet></router-outlet>
                 </div>`,
     directives: [CrisisComponent, HeroComponent, ROUTER_DIRECTIVES],
 })
