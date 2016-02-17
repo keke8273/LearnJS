@@ -1,26 +1,26 @@
 ﻿import {Component, OnInit} from 'angular2/core'
 import {HTTP_PROVIDERS} from 'angular2/http';
 
-import {Hero} from './hero';
-import {HeroService} from './hero.service';
-import {HeroFormComponent} from './hero-form.component';
+import {Crisis} from './crisis';
+import {CrisisService} from './crisis.service';
+import {CrisisFormComponent} from './crisis-form.component';
 
 @Component({
-    selector: 'heroes',
-    templateUrl: 'content/templates/hero.component.html',
-    directives: [HeroFormComponent],
+    selector: 'crisises',
+    templateUrl: 'app/crisises/crisis.component.html',
+    directives: [CrisisFormComponent],
     styles: [`
     .selected {
       background-color: #CFD8DC !important;
       color: white;
     }
-    .heroes {
+    .crisises {
       margin: 0 0 2em 0;
       list-style-type: none;
       padding: 0;
-      width: 15em;
+      width: 20em;
     }
-    .heroes li {
+    .crisises li {
       cursor: pointer;
       position: relative;
       left: 0;
@@ -30,26 +30,27 @@ import {HeroFormComponent} from './hero-form.component';
       height: 1.7em;
       border-radius: 4px;
     }
-    .heroes li.selected:hover {
+    .crisises li.selected:hover {
       color: white;
     }
-    .heroes li:hover {
+    .crisises li:hover {
       color: #607D8B;
       background-color: #EEE;
-      left: .3em;
+      left: .1em;
     }
-    .heroes .text {
+    .crisises .text {
       position: relative;
       top: -3px;
     }
-    .heroes .badge {
+    .crisises .badge {
       display: inline-block;
+      font-size: small;
       width: 3em;
       text-align: center;
-      font-size: small;
       color: white;
       padding: 0.5em 0.7em 0em 0.7em;
       background-color: #607D8B;
+      line-height: 1em;
       position: relative;
       left: -1px;
       top: -4px;
@@ -58,23 +59,22 @@ import {HeroFormComponent} from './hero-form.component';
       border-radius: 4px 0px 0px 4px;
     }
   `],
-   providers: [HTTP_PROVIDERS, HeroService]
+    providers: [HTTP_PROVIDERS, CrisisService]
 })
-export class HeroComponent implements OnInit {
-    public heroes: Hero[];
-    public selectedHero: Hero;
+export class CrisisComponent implements OnInit {
+    public crisises: Crisis[];
+    public selectedCrisis: Crisis;
 
-    constructor(private _heroService: HeroService) {
-        _heroService.heroAdded.subscribe(hero => this.heroes.push(hero));
+    constructor(private _service: CrisisService) {
     }
 
-    getHeroes() {
-        this._heroService.getHeroes().then(heroes => this.heroes = heroes);
+    getCrisises() {
+        this._service.getCrisises().then(crisises => this.crisises = crisises);
     }
 
     ngOnInit() {
-        this.getHeroes();
+        this.getCrisises();
     }
 
-    onSelect(hero: Hero) { this.selectedHero = hero; }
+    onSelect(crisis: Crisis) { this.selectedCrisis = crisis; }
 }

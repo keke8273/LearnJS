@@ -1,9 +1,9 @@
 ﻿import {Component, OnInit, Inject} from 'angular2/core';
 import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 
-import {Hero} from './hero';
-import {HeroComponent} from './hero.component';
-import {CrisisComponent} from './crisis.component';
+import {Hero} from './heroes/hero';
+import {HeroComponent} from './heroes/hero.component';
+import {CrisisComponent} from './crisises/crisis.component';
 
 @Component({
     selector: 'my-app',
@@ -18,7 +18,7 @@ import {CrisisComponent} from './crisis.component';
     directives: [CrisisComponent, HeroComponent, ROUTER_DIRECTIVES],
 })
 @RouteConfig([
-    { path: '/crisis-center', name: 'CrisisCenter', component: CrisisComponent },
+    { path: '/crisis-center', name: 'CrisisCenter', component: CrisisComponent, useAsDefault: true },
     { path: '/heroes', name: 'Heroes', component: HeroComponent},
 ])
 export class AppComponent{

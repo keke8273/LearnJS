@@ -61,10 +61,10 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="content\templates\hero.component.html" />
-    <Content Include="content\templates\crisis.component.html" />
-    <Content Include="content\templates\crisis-form.component.html" />
-    <Content Include="content\templates\hero-form.component.html" />
+    <Content Include="app\heroes\hero.component.html" />
+    <Content Include="app\crisises\crisis.component.html" />
+    <Content Include="app\crisises\crisis-form.component.html" />
+    <Content Include="app\heroes\hero-form.component.html" />
     <Content Include="package.json" />
     <Content Include="tsconfig.json" />
     <Content Include="Metadata\deploymentTemplates\apiappconfig.azureresource.json" />
@@ -89,19 +89,19 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="app\app.component.ts" />
-    <TypeScriptCompile Include="app\crisis.component.ts" />
-    <TypeScriptCompile Include="app\crisis.ts" />
-    <TypeScriptCompile Include="app\crisis-form.component.ts" />
-    <TypeScriptCompile Include="app\hero.component.ts" />
-    <TypeScriptCompile Include="app\hero-form.component.ts" />
-    <TypeScriptCompile Include="app\crisis.service.ts" />
-    <TypeScriptCompile Include="app\hero.service.ts" />
-    <TypeScriptCompile Include="app\hero.ts" />
+    <TypeScriptCompile Include="app\crisises\crisis.component.ts" />
+    <TypeScriptCompile Include="app\crisises\crisis.ts" />
+    <TypeScriptCompile Include="app\crisises\crisis-form.component.ts" />
+    <TypeScriptCompile Include="app\heroes\hero.component.ts" />
+    <TypeScriptCompile Include="app\heroes\hero-form.component.ts" />
+    <TypeScriptCompile Include="app\crisises\crisis.service.ts" />
+    <TypeScriptCompile Include="app\heroes\hero.service.ts" />
+    <TypeScriptCompile Include="app\heroes\hero.ts" />
     <TypeScriptCompile Include="app\main.ts">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="app\mock-crisises.ts" />
-    <TypeScriptCompile Include="app\mock-heroes.ts" />
+    <TypeScriptCompile Include="app\crisises\mock-crisises.ts" />
+    <TypeScriptCompile Include="app\heroes\mock-heroes.ts" />
     <TypeScriptCompile Include="typings\angular2\angular2.d.ts" />
   </ItemGroup>
   <PropertyGroup>

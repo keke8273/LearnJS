@@ -5,7 +5,7 @@ import {CrisisService} from './crisis.service';
 
 @Component({
     selector: 'crisis-form',
-    templateUrl: 'content/templates/crisis-form.component.html',
+    templateUrl: 'app/crisises/crisis-form.component.html',
     inputs: ['model']
 })
 export class CrisisFormComponent {

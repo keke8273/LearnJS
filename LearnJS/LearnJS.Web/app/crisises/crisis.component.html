@@ -1,5 +1,5 @@
 ﻿<div class="row">
-    <div class="col-lg-4">
+    <div class="col-sm-4">
         <ul class="crisises">
             <li *ngFor="#crisis of crisises"
                 [class.selected]="crisis === selectedCrisis"
@@ -8,7 +8,7 @@
             </li>
         </ul>
     </div>
-    <div class="col-lg-6" *ngIf="selectedCrisis">
+    <div class="col-sm-8" *ngIf="selectedCrisis">
         <crisis-form [model]="selectedCrisis"></crisis-form>
     </div>
 </div>

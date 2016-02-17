@@ -9,8 +9,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('angular2/core');
 var router_1 = require('angular2/router');
-var hero_component_1 = require('./hero.component');
-var crisis_component_1 = require('./crisis.component');
+var hero_component_1 = require('./heroes/hero.component');
+var crisis_component_1 = require('./crisises/crisis.component');
 var AppComponent = (function () {
     function AppComponent() {
         this.title = 'Tour of Heroes';
@@ -22,7 +22,7 @@ var AppComponent = (function () {
             directives: [crisis_component_1.CrisisComponent, hero_component_1.HeroComponent, router_1.ROUTER_DIRECTIVES],
         }),
         router_1.RouteConfig([
-            { path: '/crisis-center', name: 'CrisisCenter', component: crisis_component_1.CrisisComponent },
+            { path: '/crisis-center', name: 'CrisisCenter', component: crisis_component_1.CrisisComponent, useAsDefault: true },
             { path: '/heroes', name: 'Heroes', component: hero_component_1.HeroComponent },
         ]), 
         __metadata('design:paramtypes', [])
