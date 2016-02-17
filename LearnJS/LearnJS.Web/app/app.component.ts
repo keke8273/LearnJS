@@ -9,8 +9,8 @@ import {CrisisComponent} from './crisis.component';
     selector: 'my-app',
     template: `<h1>{{title}}</h1>
                 <nav>
-                    <a [routerLink] = "['CrisisCenter']">Crisis Center</a>
-                    <a [routerLink] = "['Heroes']">Heroes</a>
+                    <a [routerLink] = "['CrisisCenter']"><i class="fa fa-fire fa-fw"></i>Crisis Center</a>
+                    <a [routerLink] = "['Heroes']"><i class="fa fa-users fa-fw"></i> Heroes</a>
                 </nav>     
                 <div class="container">
                     <router-outlet></router-outlet>

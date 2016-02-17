@@ -6,7 +6,7 @@ import {CrisisService} from './crisis.service';
 import {CrisisFormComponent} from './crisis-form.component';
 
 @Component({
-    selector: 'crisis-component',
+    selector: 'crisises',
     templateUrl: 'content/templates/crisis.component.html',
     directives: [CrisisFormComponent],
     styles: [`
@@ -27,7 +27,7 @@ import {CrisisFormComponent} from './crisis-form.component';
       background-color: #EEE;
       margin: .5em;
       padding: .3em 0em;
-      height: 1.6em;
+      height: 1.7em;
       border-radius: 4px;
     }
     .crisises li.selected:hover {
@@ -45,8 +45,10 @@ import {CrisisFormComponent} from './crisis-form.component';
     .crisises .badge {
       display: inline-block;
       font-size: small;
+      width: 3em;
+      text-align: center;
       color: white;
-      padding: 0.8em 0.7em 0em 0.7em;
+      padding: 0.5em 0.7em 0em 0.7em;
       background-color: #607D8B;
       line-height: 1em;
       position: relative;

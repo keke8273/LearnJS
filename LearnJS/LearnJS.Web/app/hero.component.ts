@@ -6,7 +6,7 @@ import {HeroService} from './hero.service';
 import {HeroFormComponent} from './hero-form.component';
 
 @Component({
-    selector: 'hero-component',
+    selector: 'heroes',
     templateUrl: 'content/templates/hero.component.html',
     directives: [HeroFormComponent],
     styles: [`
@@ -18,7 +18,7 @@ import {HeroFormComponent} from './hero-form.component';
       margin: 0 0 2em 0;
       list-style-type: none;
       padding: 0;
-      width: 10em;
+      width: 15em;
     }
     .heroes li {
       cursor: pointer;
@@ -27,7 +27,7 @@ import {HeroFormComponent} from './hero-form.component';
       background-color: #EEE;
       margin: .5em;
       padding: .3em 0em;
-      height: 1.6em;
+      height: 1.7em;
       border-radius: 4px;
     }
     .heroes li.selected:hover {
@@ -36,7 +36,7 @@ import {HeroFormComponent} from './hero-form.component';
     .heroes li:hover {
       color: #607D8B;
       background-color: #EEE;
-      left: .1em;
+      left: .3em;
     }
     .heroes .text {
       position: relative;
@@ -44,11 +44,12 @@ import {HeroFormComponent} from './hero-form.component';
     }
     .heroes .badge {
       display: inline-block;
+      width: 3em;
+      text-align: center;
       font-size: small;
       color: white;
-      padding: 0.8em 0.7em 0em 0.7em;
+      padding: 0.5em 0.7em 0em 0.7em;
       background-color: #607D8B;
-      line-height: 1em;
       position: relative;
       left: -1px;
       top: -4px;
