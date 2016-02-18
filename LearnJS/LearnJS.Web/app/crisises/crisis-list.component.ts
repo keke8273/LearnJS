@@ -8,7 +8,9 @@ import {CrisisFormComponent} from './crisis-form.component';
 
 @Component({
     selector: 'crisis-list',
-    template: `<ul class="crisis-list">
+    template: `
+            <h2>CRISIS CENTER</h2>
+            <ul class="crisis-list">
                 <li *ngFor="#crisis of crisises"
                     [class.selected]="isSelected(crisis)"
                     (click)="onSelect(crisis)">

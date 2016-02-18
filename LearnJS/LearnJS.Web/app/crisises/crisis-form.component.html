@@ -1,5 +1,5 @@
-﻿<h1>Crisis Form</h1>
-<form *ngIf="active" (ngSubmit)="onSubmit()" #crisisForm="ngForm">
+﻿<h2>Crisis Editor</h2>
+<form *ngIf="model" (ngSubmit)="onSubmit()" #crisisForm="ngForm">
     {{diagnostic}}
     <div class="form-group">
         <label for="name">Name</label>

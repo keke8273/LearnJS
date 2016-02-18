@@ -8,7 +8,6 @@ import {CrisisListComponent} from './crisis-list.component';
 @Component({
     selector: 'crisises',
     template: `
-        <h2>CRISIS CENTER</h2>
         <router-outlet></router-outlet>    
     `,
     directives: [RouterOutlet],

@@ -18,7 +18,7 @@ var CrisisComponent = (function () {
     CrisisComponent = __decorate([
         core_1.Component({
             selector: 'crisises',
-            template: "\n        <h2>CRISIS CENTER</h2>\n        <router-outlet></router-outlet>    \n    ",
+            template: "\n        <router-outlet></router-outlet>    \n    ",
             directives: [router_1.RouterOutlet],
             providers: [crisis_service_1.CrisisService]
         }),
