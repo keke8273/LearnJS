@@ -5,6 +5,8 @@ import {Hero} from './heroes/hero';
 import {HeroComponent} from './heroes/hero.component';
 import {CrisisComponent} from './crisises/crisis.component';
 
+import {DialogService}         from './dialog.service';
+
 @Component({
     selector: 'my-app',
     template: `<h1>{{title}}</h1>
@@ -15,10 +17,11 @@ import {CrisisComponent} from './crisises/crisis.component';
                 <div class="container">
                     <router-outlet></router-outlet>
                 </div>`,
+    providers:[DialogService],
     directives: [CrisisComponent, HeroComponent, ROUTER_DIRECTIVES],
 })
 @RouteConfig([
-    { path: '/crisis-center', name: 'CrisisCenter', component: CrisisComponent, useAsDefault: true },
+    { path: '/crisis-center/...', name: 'CrisisCenter', component: CrisisComponent, useAsDefault: true },
     { path: '/heroes', name: 'Heroes', component: HeroComponent},
 ])
 export class AppComponent{

@@ -62,7 +62,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\heroes\hero.component.html" />
-    <Content Include="app\crisises\crisis.component.html" />
     <Content Include="app\crisises\crisis-form.component.html" />
     <Content Include="app\heroes\hero-form.component.html" />
     <Content Include="package.json" />
@@ -88,6 +87,7 @@
     <Folder Include="scripts\" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="app\crisises\crisis-list.component.ts" />
     <TypeScriptCompile Include="app\dialog.service.ts" />
     <TypeScriptCompile Include="app\app.component.ts" />
     <TypeScriptCompile Include="app\crisises\crisis.component.ts" />
@@ -112,6 +112,7 @@
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
     <TypeScriptModuleKind>commonjs</TypeScriptModuleKind>
+    <TypeScriptTarget>ES5</TypeScriptTarget>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)' == 'Release'">
     <TypeScriptModuleKind>commonjs</TypeScriptModuleKind>

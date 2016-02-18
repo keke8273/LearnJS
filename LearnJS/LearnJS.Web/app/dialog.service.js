@@ -8,22 +8,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('angular2/core');
-var mock_crisises_1 = require('./mock-crisises');
-var CrisisService = (function () {
-    function CrisisService() {
+/**
+ * Async modal dialog service
+ * DialogService makes this app easier to test by faking this service.
+ * TODO: better modal implemenation that doesn't use window.confirm
+ */
+var DialogService = (function () {
+    function DialogService() {
     }
-    CrisisService.prototype.getCrisises = function () {
-        return Promise.resolve(mock_crisises_1.CRISES);
+    /**
+     * Ask user to confirm an action. `message` explains the action and choices.
+     * Returns promise resolving to `true`=confirm or `false`=cancel
+     */
+    DialogService.prototype.confirm = function (message) {
+        return new Promise(function (resolve, reject) {
+            return resolve(window.confirm(message || 'Is it OK?'));
+        });
     };
-    // the | string token is a Pipe
-    CrisisService.prototype.getCrisis = function (sn) {
-        return Promise.resolve(mock_crisises_1.CRISES).then(function (cries) { return cries.filter(function (c) { return c.serialNumber === +sn; })[0]; });
-    };
-    CrisisService = __decorate([
+    ;
+    DialogService = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [])
-    ], CrisisService);
-    return CrisisService;
+    ], DialogService);
+    return DialogService;
 })();
-exports.CrisisService = CrisisService;
-//# sourceMappingURL=crisis.service.js.map
+exports.DialogService = DialogService;
+//# sourceMappingURL=dialog.service.js.map

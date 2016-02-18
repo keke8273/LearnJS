@@ -1,9 +1,9 @@
 ﻿import {Crisis} from './crisis';
 
-export var CRISISES: Crisis[] = [
-    { "serialNumber": 1, "name": "North Korean Missle Launching" },
-    { "serialNumber": 2, "name": "Syria Refugee" },
-    { "serialNumber": 3, "name": "MS730" },
-    { "serialNumber": 4, "name": "Chinese Smug" },
-    { "serialNumber": 5, "name": "Australia Labor Party"},
+export var CRISES: Crisis[] = [
+    new Crisis({ "serialNumber": 1, "name": "Some crisis 1" }),
+    new Crisis({ "serialNumber": 2, "name": "Some crisis 2" }),
+    new Crisis({ "serialNumber": 3, "name": "Some crisis 3" }),
+    new Crisis({ "serialNumber": 4, "name": "Some crisis 4" }),
+    new Crisis({ "serialNumber": 5, "name": "Some crisis 5"}),
 ];

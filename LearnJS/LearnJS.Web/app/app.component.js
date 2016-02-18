@@ -11,6 +11,7 @@ var core_1 = require('angular2/core');
 var router_1 = require('angular2/router');
 var hero_component_1 = require('./heroes/hero.component');
 var crisis_component_1 = require('./crisises/crisis.component');
+var dialog_service_1 = require('./dialog.service');
 var AppComponent = (function () {
     function AppComponent() {
         this.title = 'Tour of Heroes';
@@ -19,10 +20,11 @@ var AppComponent = (function () {
         core_1.Component({
             selector: 'my-app',
             template: "<h1>{{title}}</h1>\n                <nav>\n                    <a [routerLink] = \"['CrisisCenter']\"><i class=\"fa fa-fire fa-fw\"></i>Crisis Center</a>\n                    <a [routerLink] = \"['Heroes']\"><i class=\"fa fa-users fa-fw\"></i> Heroes</a>\n                </nav>     \n                <div class=\"container\">\n                    <router-outlet></router-outlet>\n                </div>",
+            providers: [dialog_service_1.DialogService],
             directives: [crisis_component_1.CrisisComponent, hero_component_1.HeroComponent, router_1.ROUTER_DIRECTIVES],
         }),
         router_1.RouteConfig([
-            { path: '/crisis-center', name: 'CrisisCenter', component: crisis_component_1.CrisisComponent, useAsDefault: true },
+            { path: '/crisis-center/...', name: 'CrisisCenter', component: crisis_component_1.CrisisComponent, useAsDefault: true },
             { path: '/heroes', name: 'Heroes', component: hero_component_1.HeroComponent },
         ]), 
         __metadata('design:paramtypes', [])

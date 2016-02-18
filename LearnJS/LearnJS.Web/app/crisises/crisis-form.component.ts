@@ -28,25 +28,47 @@ export class CrisisFormComponent implements OnInit, CanDeactivate{
     ) { }
 
     ngOnInit() {
-        let id = +this._routeParams.get('id');
-        this._service.getCrisis(id).then(crisis => {
+        let sn = +this._routeParams.get('sn');
+        this._service.getCrisis(sn).then(crisis => {
             if (crisis) {
-                this.origin = crisis;
+                this.origin = new Crisis(crisis);
                 this.model = crisis;
+
+                // debug output
+                console.log("crisis " + JSON.stringify(crisis)) 
+                console.log("this.origin " + JSON.stringify(this.origin))
+                console.log("this.model " + JSON.stringify(this.model))
             }
             else {
                 this.gotoCrisisCenter();
             }
         });
+
+        //let crisis = this._service.getCrisis(sn);
+
+        //if (crisis) {
+        //        this.origin = new Crisis(crisis);
+        //        this.model = crisis;
+        //    }
+        //    else {
+        //        this.gotoCrisisCenter();
+        //    }
     }
 
     onSubmit() {
         this.submitted = true;
+        this.origin = this.model;
+        this.gotoCrisisCenter();
+    }
+
+    onCancel() {
+        this.model = this.origin;
+        this.gotoCrisisCenter();
     }
 
     routerCanDeactivate(next: ComponentInstruction, prev: ComponentInstruction): any {
         // Allow synchronous navigation (`true`) if no crisis or the crisis is unchanged.
-        if (!this.model || this.model === this.origin) {
+        if (!this.model || this.model.name === this.origin.name) {
             return true;
         }
         // Otherwise ask the user with the dialog service and return its
@@ -55,7 +77,8 @@ export class CrisisFormComponent implements OnInit, CanDeactivate{
     }
 
     gotoCrisisCenter() {
-        this._router.navigate(['CrisisCenter']);
+        let crisisSn = this.model ? this.model.serialNumber : null;
+        this._router.navigate(['CrisisCenter', {sn:crisisSn}]);
     }
 
     // TODO: Remove this when we're done
