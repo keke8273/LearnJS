@@ -63,6 +63,7 @@
     <Folder Include="scripts\" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="app\attribute-directives\highlight.directive.ts" />
     <TypeScriptCompile Include="app\crisises\crisis-list.component.ts" />
     <TypeScriptCompile Include="app\dialog.service.ts" />
     <TypeScriptCompile Include="app\app.component.ts" />
