@@ -1,0 +1,11 @@
+{
+    "Framework": "jasmine",
+    "TestHarnessLocationMode": "SettingsFileAdjacent",
+    "TestHarnessReferenceMode": "AMD",
+    "TypeScriptModuleKind": "AMD",
+    "References": [
+        { "Path": "LearnJS.Web/scripts/require.js" },
+	    { "Path": "LearnJS.Web.Test/config.js" },
+        { "Path": "LearnJS.Web.Test", "Include": "*.ts", "IncludeInTestHarness": "false" },
+    ]
+}

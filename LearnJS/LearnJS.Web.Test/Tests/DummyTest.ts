@@ -1,6 +1,8 @@
-///<reference path="../Scripts/typings/jasmine/jasmine.d.ts" />
-describe("AnIntroductory", function () {
-    it("DummyTest", function () {
+/// <reference path="../lib/jasmine/jasmine.d.ts"/>
+
+describe("AnIntroductory", () => {
+
+    it("DummyTest", () => {
         // Fixture setup
         var sut = 1;
         // Exercise system                
@@ -10,4 +12,4 @@ describe("AnIntroductory", function () {
         // Teardown        
     });
 });
-//# sourceMappingURL=Test.js.map
+

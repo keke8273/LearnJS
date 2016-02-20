@@ -46,6 +46,7 @@
     <Content Include="app\crisises\crisis-form.component.html" />
     <Content Include="app\heroes\hero-form.component.html" />
     <Content Include="package.json" />
+    <Content Include="scripts\require.js" />
     <Content Include="tsconfig.json" />
     <Content Include="Metadata\deploymentTemplates\apiappconfig.azureresource.json" />
     <Content Include=".deployment" />
@@ -59,9 +60,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="scripts\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <TypeScriptCompile Include="app\attribute-directives\highlight.directive.ts" />
     <TypeScriptCompile Include="app\crisises\crisis-list.component.ts" />
@@ -80,6 +79,7 @@
     </TypeScriptCompile>
     <TypeScriptCompile Include="app\crisises\mock-crisises.ts" />
     <TypeScriptCompile Include="app\heroes\mock-heroes.ts" />
+    <TypeScriptCompile Include="scripts\require.d.ts" />
     <TypeScriptCompile Include="typings\angular2\angular2.d.ts" />
   </ItemGroup>
   <PropertyGroup>
